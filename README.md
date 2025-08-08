@@ -1876,10 +1876,10 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "qrCodeImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...",
     "pixKey": "pix@empresa.com",
     "amount": 199.90,
-    "expiresAt": "2024-01-10T16:00:00.000Z",
+    "expiresAt": "2025-01-10T16:00:00.000Z",
     "status": "pending",
     "acquirer": "stone",
-    "createdAt": "2024-01-10T15:30:00.000Z"
+    "createdAt": "2025-01-10T15:30:00.000Z"
   }
 }
 ```
@@ -1900,10 +1900,10 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "status": "paid", // "pending", "paid", "expired", "cancelled"
     "amount": 199.90,
     "paidAmount": 199.90,
-    "paidAt": "2024-01-10T15:45:00.000Z",
+    "paidAt": "2025-01-10T15:45:00.000Z",
     "acquirer": "stone",
     "transactionId": "txn_stone_987654321",
-    "pixEndToEndId": "E12345678202401101545123456789",
+    "pixEndToEndId": "E12345678202501101545123456789",
     "customerInfo": {
       "name": "João Silva",
       "document": "12345678901"
@@ -1932,9 +1932,9 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "order_id": "order_123456"
   },
   "pix": {
-    "end_to_end_id": "E12345678202401101545123456789"
+    "end_to_end_id": "E12345678202501101545123456789"
   },
-  "created_at": "2024-01-10T15:45:00.000Z"
+  "created_at": "2025-01-10T15:45:00.000Z"
 }
 ```
 
@@ -1947,7 +1947,7 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "orderId": "order_123456",
     "previousStatus": "pending",
     "newStatus": "paid",
-    "processedAt": "2024-01-10T15:45:00.000Z"
+    "processedAt": "2025-01-10T15:45:00.000Z"
   }
 }
 ```
@@ -2012,13 +2012,13 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
         "slug": "stone",
         "status": "online",
         "responseTime": 250,
-        "lastCheck": "2024-01-10T15:30:00.000Z"
+        "lastCheck": "2025-01-10T15:30:00.000Z"
       },
       {
         "slug": "pagar-me", 
         "status": "online",
         "responseTime": 180,
-        "lastCheck": "2024-01-10T15:30:00.000Z"
+        "lastCheck": "2025-01-10T15:30:00.000Z"
       }
     ],
     "stats": {
@@ -2100,7 +2100,7 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
       "terminal": "TERM001",
       "authCode": "AUTH123456"
     },
-    "createdAt": "2024-01-10T15:30:00.000Z"
+    "createdAt": "2025-01-10T15:30:00.000Z"
   }
 }
 ```
@@ -2163,10 +2163,10 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "cardLastFour": "1111",
     "authorizationCode": "AUTH123456",
     "nsu": "000123456",
-    "createdAt": "2024-01-10T15:30:00.000Z",
-    "paidAt": "2024-01-10T15:30:15.000Z",
+    "createdAt": "2025-01-10T15:30:00.000Z",
+    "paidAt": "2025-01-10T15:30:15.000Z",
     "liquidation": {
-      "expectedDate": "2024-01-11",
+      "expectedDate": "2025-01-11",
       "netAmount": 289.90,
       "fee": 10.00
     }
@@ -2196,9 +2196,9 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "chargeId": "charge_abc123def456",
     "status": "paid",
     "capturedAmount": 299.90,
-    "capturedAt": "2024-01-10T15:45:00.000Z",
+    "capturedAt": "2025-01-10T15:45:00.000Z",
     "liquidation": {
-      "expectedDate": "2024-01-11",
+      "expectedDate": "2025-01-11",
       "netAmount": 289.90,
       "fee": 10.00
     }
@@ -2229,10 +2229,10 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "chargeId": "charge_abc123def456",
     "status": "voided",
     "voidedAmount": 299.90,
-    "voidedAt": "2024-01-10T16:00:00.000Z",
+    "voidedAt": "2025-01-10T16:00:00.000Z",
     "refund": {
       "refundId": "refund_123456",
-      "expectedDate": "2024-01-15",
+      "expectedDate": "2025-01-15",
       "method": "original_payment"
     }
   }
@@ -2256,7 +2256,7 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "metadata": {
       "order_id": "order_123456"
     },
-    "created_at": "2024-01-10T15:30:00.000Z"
+    "created_at": "2025-01-10T15:30:00.000Z"
   }
 }
 ```
@@ -2283,12 +2283,12 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "stone": {
       "status": "online",
       "responseTime": 180,
-      "lastTest": "2024-01-10T15:30:00.000Z"
+      "lastTest": "2025-01-10T15:30:00.000Z"
     },
     "pagar_me": {
       "status": "online", 
       "responseTime": 220,
-      "lastTest": "2024-01-10T15:30:00.000Z"
+      "lastTest": "2025-01-10T15:30:00.000Z"
     }
   }
 }
@@ -2340,10 +2340,10 @@ Sistema de gerenciamento de templates para emails, páginas e outros conteúdos 
       "isActive": true,
       "usage": {
         "timesUsed": 250,
-        "lastUsedAt": "2024-01-10T15:30:00.000Z"
+        "lastUsedAt": "2025-01-10T15:30:00.000Z"
       },
-      "createdAt": "2024-01-01T10:00:00.000Z",
-      "updatedAt": "2024-01-10T09:00:00.000Z"
+      "createdAt": "2025-01-01T10:00:00.000Z",
+      "updatedAt": "2025-01-10T09:00:00.000Z"
     }
   ],
   "pagination": {
@@ -2391,7 +2391,7 @@ Sistema de gerenciamento de templates para emails, páginas e outros conteúdos 
       "timesUsed": 250,
       "successRate": 98.5
     },
-    "createdAt": "2024-01-01T10:00:00.000Z"
+    "createdAt": "2025-01-01T10:00:00.000Z"
   }
 }
 ```
@@ -2464,7 +2464,7 @@ Dashboard com métricas de vendas, usuários e performance detalhada.
     "charts": {
       "dailyRevenue": [
         {
-          "date": "2024-01-01",
+          "date": "2025-01-01",
           "revenue": 1200.50,
           "orders": 8
         }
@@ -2884,7 +2884,7 @@ Sistema completo de rastreamento Facebook Pixel.
 ---
 
 *Documentação gerada automaticamente - Sistema Backend v1.0.0*
-*Última atualização: Janeiro 2024*
+*Última atualização:  08 - Agosto,  2025*
 
 ---
 
@@ -4416,7 +4416,7 @@ curl -X POST http://localhost:5000/api/tracking/events \
 ---
 
 **✅ Implementação Completa - CheckoutPro Backend API v3.0**
-*Atualizado em Janeiro 2025 - Todas as Funcionalidades Solicitadas Implementadas*
+*Atualizado em  08 - Agosto,  2025 - Todas as Funcionalidades Solicitadas Implementadas*
 
 **🚀 Funcionalidades Implementadas:**
 - ✅ Sistema de Logs completo
