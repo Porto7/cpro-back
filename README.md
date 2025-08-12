@@ -1876,10 +1876,10 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "qrCodeImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...",
     "pixKey": "pix@empresa.com",
     "amount": 199.90,
-    "expiresAt": "2025-01-10T16:00:00.000Z",
+    "expiresAt": "2024-01-10T16:00:00.000Z",
     "status": "pending",
     "acquirer": "stone",
-    "createdAt": "2025-01-10T15:30:00.000Z"
+    "createdAt": "2024-01-10T15:30:00.000Z"
   }
 }
 ```
@@ -1900,10 +1900,10 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "status": "paid", // "pending", "paid", "expired", "cancelled"
     "amount": 199.90,
     "paidAmount": 199.90,
-    "paidAt": "2025-01-10T15:45:00.000Z",
+    "paidAt": "2024-01-10T15:45:00.000Z",
     "acquirer": "stone",
     "transactionId": "txn_stone_987654321",
-    "pixEndToEndId": "E12345678202501101545123456789",
+    "pixEndToEndId": "E12345678202401101545123456789",
     "customerInfo": {
       "name": "João Silva",
       "document": "12345678901"
@@ -1932,9 +1932,9 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "order_id": "order_123456"
   },
   "pix": {
-    "end_to_end_id": "E12345678202501101545123456789"
+    "end_to_end_id": "E12345678202401101545123456789"
   },
-  "created_at": "2025-01-10T15:45:00.000Z"
+  "created_at": "2024-01-10T15:45:00.000Z"
 }
 ```
 
@@ -1947,7 +1947,7 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
     "orderId": "order_123456",
     "previousStatus": "pending",
     "newStatus": "paid",
-    "processedAt": "2025-01-10T15:45:00.000Z"
+    "processedAt": "2024-01-10T15:45:00.000Z"
   }
 }
 ```
@@ -2012,13 +2012,13 @@ Sistema unificado de pagamentos PIX integrado com múltiplas adquirentes. Não h
         "slug": "stone",
         "status": "online",
         "responseTime": 250,
-        "lastCheck": "2025-01-10T15:30:00.000Z"
+        "lastCheck": "2024-01-10T15:30:00.000Z"
       },
       {
         "slug": "pagar-me", 
         "status": "online",
         "responseTime": 180,
-        "lastCheck": "2025-01-10T15:30:00.000Z"
+        "lastCheck": "2024-01-10T15:30:00.000Z"
       }
     ],
     "stats": {
@@ -2100,7 +2100,7 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
       "terminal": "TERM001",
       "authCode": "AUTH123456"
     },
-    "createdAt": "2025-01-10T15:30:00.000Z"
+    "createdAt": "2024-01-10T15:30:00.000Z"
   }
 }
 ```
@@ -2163,10 +2163,10 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "cardLastFour": "1111",
     "authorizationCode": "AUTH123456",
     "nsu": "000123456",
-    "createdAt": "2025-01-10T15:30:00.000Z",
-    "paidAt": "2025-01-10T15:30:15.000Z",
+    "createdAt": "2024-01-10T15:30:00.000Z",
+    "paidAt": "2024-01-10T15:30:15.000Z",
     "liquidation": {
-      "expectedDate": "2025-01-11",
+      "expectedDate": "2024-01-11",
       "netAmount": 289.90,
       "fee": 10.00
     }
@@ -2196,9 +2196,9 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "chargeId": "charge_abc123def456",
     "status": "paid",
     "capturedAmount": 299.90,
-    "capturedAt": "2025-01-10T15:45:00.000Z",
+    "capturedAt": "2024-01-10T15:45:00.000Z",
     "liquidation": {
-      "expectedDate": "2025-01-11",
+      "expectedDate": "2024-01-11",
       "netAmount": 289.90,
       "fee": 10.00
     }
@@ -2229,10 +2229,10 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "chargeId": "charge_abc123def456",
     "status": "voided",
     "voidedAmount": 299.90,
-    "voidedAt": "2025-01-10T16:00:00.000Z",
+    "voidedAt": "2024-01-10T16:00:00.000Z",
     "refund": {
       "refundId": "refund_123456",
-      "expectedDate": "2025-01-15",
+      "expectedDate": "2024-01-15",
       "method": "original_payment"
     }
   }
@@ -2256,7 +2256,7 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "metadata": {
       "order_id": "order_123456"
     },
-    "created_at": "2025-01-10T15:30:00.000Z"
+    "created_at": "2024-01-10T15:30:00.000Z"
   }
 }
 ```
@@ -2283,12 +2283,12 @@ Sistema completo de processamento de pagamentos com cartão de crédito/débito 
     "stone": {
       "status": "online",
       "responseTime": 180,
-      "lastTest": "2025-01-10T15:30:00.000Z"
+      "lastTest": "2024-01-10T15:30:00.000Z"
     },
     "pagar_me": {
       "status": "online", 
       "responseTime": 220,
-      "lastTest": "2025-01-10T15:30:00.000Z"
+      "lastTest": "2024-01-10T15:30:00.000Z"
     }
   }
 }
@@ -2340,10 +2340,10 @@ Sistema de gerenciamento de templates para emails, páginas e outros conteúdos 
       "isActive": true,
       "usage": {
         "timesUsed": 250,
-        "lastUsedAt": "2025-01-10T15:30:00.000Z"
+        "lastUsedAt": "2024-01-10T15:30:00.000Z"
       },
-      "createdAt": "2025-01-01T10:00:00.000Z",
-      "updatedAt": "2025-01-10T09:00:00.000Z"
+      "createdAt": "2024-01-01T10:00:00.000Z",
+      "updatedAt": "2024-01-10T09:00:00.000Z"
     }
   ],
   "pagination": {
@@ -2391,7 +2391,7 @@ Sistema de gerenciamento de templates para emails, páginas e outros conteúdos 
       "timesUsed": 250,
       "successRate": 98.5
     },
-    "createdAt": "2025-01-01T10:00:00.000Z"
+    "createdAt": "2024-01-01T10:00:00.000Z"
   }
 }
 ```
@@ -2464,7 +2464,7 @@ Dashboard com métricas de vendas, usuários e performance detalhada.
     "charts": {
       "dailyRevenue": [
         {
-          "date": "2025-01-01",
+          "date": "2024-01-01",
           "revenue": 1200.50,
           "orders": 8
         }
@@ -2884,7 +2884,7 @@ Sistema completo de rastreamento Facebook Pixel.
 ---
 
 *Documentação gerada automaticamente - Sistema Backend v1.0.0*
-*Última atualização:  08 - Agosto,  2025*
+*Última atualização: Janeiro 2024*
 
 ---
 
@@ -4416,7 +4416,7 @@ curl -X POST http://localhost:5000/api/tracking/events \
 ---
 
 **✅ Implementação Completa - CheckoutPro Backend API v3.0**
-*Atualizado em  08 - Agosto,  2025 - Todas as Funcionalidades Solicitadas Implementadas*
+*Atualizado em Janeiro 2025 - Todas as Funcionalidades Solicitadas Implementadas*
 
 **🚀 Funcionalidades Implementadas:**
 - ✅ Sistema de Logs completo
@@ -4440,3 +4440,220 @@ curl -X POST http://localhost:5000/api/tracking/events \
 - `/api/physical` - Produtos físicos e frete
 
 **🎯 Sistema 100% Funcional e Pronto para Produção!**
+
+---
+
+## 🎨 Funcionalidades Específicas para Frontend
+
+### Sistema de URLs e Compartilhamento
+
+#### 📎 Gerar URLs do Produto
+```http
+GET /api/frontend/products/{id}/urls
+Authorization: Bearer <token>
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "product": {
+      "id": 1,
+      "name": "Produto Teste",
+      "slug": "meu-produto"
+    },
+    "urls": {
+      "product_url": "https://api.exemplo.com/api/products/slug/meu-produto",
+      "checkout_url": "https://api.exemplo.com/checkout/meu-produto",
+      "checkout_pro_url": "https://api.exemplo.com/checkout-pro/meu-produto",
+      "api_checkout": "https://api.exemplo.com/api/checkout/meu-produto",
+      "embed_url": "https://api.exemplo.com/embed/meu-produto",
+      "share_url": "https://api.exemplo.com/p/meu-produto",
+      "short_url": "https://api.exemplo.com/s/1"
+    }
+  }
+}
+```
+
+#### 🔗 Gerar URL de Checkout Personalizada
+```http
+POST /api/frontend/products/{id}/generate-checkout-url
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
+**Request Body:**
+```json
+{
+  "template": "premium",
+  "utm_params": {
+    "utm_source": "facebook",
+    "utm_medium": "social",
+    "utm_campaign": "lancamento"
+  },
+  "custom_settings": {
+    "theme": "dark",
+    "show_testimonials": true
+  }
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "checkout_url": "https://api.exemplo.com/checkout/meu-produto?template=premium&utm_source=facebook&utm_medium=social&utm_campaign=lancamento&settings=eyJ0aGVtZSI6ImRhcmsiLCJzaG93X3Rlc3RpbW9uaWFscyI6dHJ1ZX0%3D",
+    "qr_code_data": "https://api.exemplo.com/checkout/meu-produto?...",
+    "short_code": "1",
+    "expires_in": null
+  }
+}
+```
+
+### Dashboard e Configurações
+
+#### 📊 Estatísticas Rápidas do Dashboard
+```http
+GET /api/frontend/dashboard/quick-stats
+Authorization: Bearer <token>
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "total_products": 5,
+    "total_orders": 23,
+    "total_revenue": 2458.90,
+    "pending_orders": 3,
+    "conversion_rate": 2.45,
+    "top_product": {
+      "id": 1,
+      "name": "Curso JavaScript",
+      "slug": "curso-javascript",
+      "total_sales": 15,
+      "total_revenue": 1485.00
+    }
+  }
+}
+```
+
+#### ⚙️ Configurações Globais de Checkout
+```http
+GET /api/frontend/checkout-config
+Authorization: Bearer <token>
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "payment_methods": {
+      "credit_card": {
+        "enabled": true,
+        "max_installments": 12,
+        "min_installment_value": 10.00
+      },
+      "pix": {
+        "enabled": true,
+        "discount_percentage": 5
+      },
+      "paypal": {
+        "enabled": true
+      }
+    },
+    "checkout_templates": [
+      {
+        "id": "modern",
+        "name": "Moderno",
+        "description": "Design limpo e moderno"
+      },
+      {
+        "id": "premium",
+        "name": "Premium",
+        "description": "Design premium com animações"
+      }
+    ],
+    "form_fields": {
+      "available": ["name", "email", "phone", "cpf", "address"],
+      "required": ["name", "email"],
+      "validation": {
+        "email": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "phone": "^\\+?[1-9]\\d{1,14}$",
+        "cpf": "^\\d{11}$"
+      }
+    },
+    "analytics": {
+      "google_analytics": null,
+      "facebook_pixel": null,
+      "events_tracking": true
+    }
+  }
+}
+```
+
+### URLs Personalizadas e Embed
+
+#### 🔗 URL de Compartilhamento
+```http
+GET /p/{slug}
+```
+Redireciona automaticamente para `/checkout/{slug}` e registra analytics de compartilhamento.
+
+#### 📏 URL Curta por ID
+```http
+GET /s/{id}
+```
+Redireciona para `/checkout/{produto_slug}` usando o ID do produto e registra analytics.
+
+#### 🖼️ Checkout Embeddable
+```http
+GET /embed/{slug}
+```
+Retorna HTML minimalista otimizado para iframe, ideal para incorporar o checkout em outros sites.
+
+**Exemplo de Uso:**
+```html
+<iframe 
+  src="https://seudominio.com/embed/meu-produto" 
+  width="400" 
+  height="600" 
+  frameborder="0">
+</iframe>
+```
+
+#### 🌐 Preview com Open Graph
+```http
+GET /preview/{slug}
+```
+Retorna HTML com Open Graph tags completas para compartilhamento otimizado em redes sociais.
+
+---
+
+**🚀 Sistema Frontend-Ready - CheckoutPro Backend API v3.1**
+*Atualizado em Janeiro 2025 - Funcionalidades Frontend Completas*
+
+**🎯 Novas Funcionalidades Frontend:**
+- ✅ Geração automática de URLs de produto
+- ✅ Sistema de URLs curtas e compartilhamento (/p/ e /s/)
+- ✅ Checkout embeddable para iframe
+- ✅ Preview com Open Graph para redes sociais  
+- ✅ Dashboard de estatísticas rápidas
+- ✅ Configurações globais e por produto
+- ✅ URLs com parâmetros UTM automáticos
+
+**🔗 Novas Rotas Frontend:**
+- `/api/frontend/products/{id}/urls` - URLs do produto
+- `/api/frontend/products/preview` - Lista otimizada
+- `/api/frontend/dashboard/quick-stats` - Stats rápidas
+- `/api/frontend/checkout-config` - Configurações globais
+- `/p/{slug}` - URL de compartilhamento
+- `/s/{id}` - URL curta
+- `/embed/{slug}` - Checkout embeddable
+- `/preview/{slug}` - Preview com Open Graph
+
+**✨ Sistema 100% Integrado Frontend + Backend!**
