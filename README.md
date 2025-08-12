@@ -4466,7 +4466,9 @@ Authorization: Bearer <token>
     "urls": {
       "product_url": "https://api.exemplo.com/api/products/slug/meu-produto",
       "checkout_url": "https://api.exemplo.com/checkout/meu-produto",
-      "checkout_pro_url": "https://api.exemplo.com/checkout-pro/meu-produto",
+      "checkout_premium_url": "https://api.exemplo.com/checkout/meu-produto?template=premium",
+      "checkout_modern_url": "https://api.exemplo.com/checkout/meu-produto?template=modern",
+      "checkout_classic_url": "https://api.exemplo.com/checkout/meu-produto?template=classic",
       "api_checkout": "https://api.exemplo.com/api/checkout/meu-produto",
       "embed_url": "https://api.exemplo.com/embed/meu-produto",
       "share_url": "https://api.exemplo.com/p/meu-produto",
@@ -4632,6 +4634,46 @@ GET /preview/{slug}
 ```
 Retorna HTML com Open Graph tags completas para compartilhamento otimizado em redes sociais.
 
+### 🎨 Sistema de Templates Unificado
+
+#### Como Funciona o Sistema de Checkout:
+O sistema agora usa **uma única rota** com flexibilidade total, eliminando conflitos:
+
+```
+GET /checkout/{slug}                    - Usa template configurado no produto
+GET /checkout/{slug}?template=premium   - Override para template premium
+GET /checkout/{slug}?template=modern    - Override para template moderno  
+GET /checkout/{slug}?template=classic   - Override para template clássico
+```
+
+#### ⚙️ Prioridade de Templates:
+1. **Query Parameter** (`?template=premium`) - **MAIOR PRIORIDADE**
+2. **Configuração do Produto** (`checkout_settings.template`)
+3. **Template Padrão** (`modern`)
+
+#### 📝 Exemplo Prático:
+```javascript
+// Produto configurado com template "classic"
+const product = {
+  checkout_settings: {
+    template: "classic",
+    primary_color: "#FF6B35"
+  }
+}
+
+// Comportamento das URLs:
+// /checkout/produto           -> Usa "classic" + cor "#FF6B35"
+// /checkout/produto?template=premium -> Usa "premium" + cor "#FF6B35"
+// /checkout/produto?template=modern  -> Usa "modern" + cor "#FF6B35"
+```
+
+#### ✅ Vantagens da Solução:
+- ✅ **Sem Conflitos**: Elimina duplicação de rotas
+- ✅ **Flexibilidade**: Override via URL quando necessário
+- ✅ **Simplicidade**: Uma única rota para todas as variações
+- ✅ **Consistência**: Comportamento previsível
+- ✅ **Respeita Configurações**: Mantém cores, configurações do produto
+
 ---
 
 **🚀 Sistema Frontend-Ready - CheckoutPro Backend API v3.1**
@@ -4657,3 +4699,142 @@ Retorna HTML com Open Graph tags completas para compartilhamento otimizado em re
 - `/preview/{slug}` - Preview com Open Graph
 
 **✨ Sistema 100% Integrado Frontend + Backend!**
+
+---
+
+## 🧩 Componentes Frontend Criados
+
+### PixelConfiguration.jsx
+
+Componente React para configuração de pixels de rastreamento em produtos.
+
+#### 📍 Localização:
+```
+/src/components/product-form/PixelConfiguration.jsx
+```
+
+#### 🎯 Funcionalidades:
+- ✅ Lista pixels configurados do usuário
+- ✅ Anexa pixels aos produtos
+- ✅ Configura eventos de rastreamento (PageView, AddToCart, etc.)
+- ✅ Suporta Google, Facebook, TikTok, Kwai
+- ✅ Interface responsiva e intuitiva
+
+#### 📝 Uso no Frontend:
+```jsx
+import PixelConfiguration from '/src/components/product-form/PixelConfiguration.jsx';
+
+// Usar no seu formulário de produto
+<PixelConfiguration 
+  productId={productId} 
+  onSave={() => console.log('Pixel anexado!')}
+/>
+```
+
+#### 🔌 APIs Utilizadas:
+- `GET /api/tracking/pixels` - Lista pixels do usuário
+- `POST /api/tracking/pixels/{id}/attach-product` - Anexa pixel ao produto
+
+#### 📊 Eventos Suportados:
+```javascript
+const events = [
+  'PageView',       // Visualização de página
+  'AddToCart',      // Adicionar ao carrinho  
+  'InitiateCheckout', // Iniciar checkout
+  'Purchase'        // Compra realizada
+];
+```
+
+#### 🎨 Características:
+- **Export Duplo**: `export default` e `export { PixelConfiguration }`
+- **Styled Components**: CSS-in-JS integrado
+- **Error Handling**: Tratamento de erros robusto
+- **Loading States**: Estados de carregamento
+- **Responsive Design**: Funciona em mobile e desktop
+
+#### 💡 Solução para Erros de Importação:
+```javascript
+// ✅ FUNCIONA - Default Import
+import PixelConfiguration from './PixelConfiguration.jsx';
+
+// ✅ FUNCIONA - Named Import  
+import { PixelConfiguration } from './PixelConfiguration.jsx';
+
+// ❌ ERRO ANTERIOR - Módulo não exportava default
+// SyntaxError: The requested module does not provide an export named 'default'
+```
+
+---
+
+## 🔄 Atualizações Recentes na API
+
+### Sistema de Templates Unificado
+
+#### ❌ PROBLEMA ANTERIOR:
+```javascript
+// Duas rotas conflitantes
+GET /checkout/{slug}      // Usava configuração do produto
+GET /checkout-pro/{slug}  // FORÇAVA template premium (CONFLITO!)
+```
+
+#### ✅ SOLUÇÃO IMPLEMENTADA:
+```javascript
+// Uma rota flexível com override
+GET /checkout/{slug}                    // Configuração do produto
+GET /checkout/{slug}?template=premium   // Override premium
+GET /checkout/{slug}?template=modern    // Override moderno
+GET /checkout/{slug}?template=classic   // Override clássico
+```
+
+#### 🎯 Benefícios da Mudança:
+- **Elimina Duplicação**: Rota `/checkout-pro` removida
+- **Flexibilidade**: Override via query parameter
+- **Consistência**: Respeita sempre as configurações do produto
+- **Simplicidade**: Uma única lógica para todos os templates
+
+### URLs Atualizadas no Frontend
+
+#### 🔗 URLs Antigas (Removidas):
+```json
+{
+  "checkout_pro_url": "https://api.com/checkout-pro/produto"  // ❌ REMOVIDO
+}
+```
+
+#### 🔗 URLs Novas (Implementadas):
+```json
+{
+  "checkout_url": "https://api.com/checkout/produto",
+  "checkout_premium_url": "https://api.com/checkout/produto?template=premium",
+  "checkout_modern_url": "https://api.com/checkout/produto?template=modern", 
+  "checkout_classic_url": "https://api.com/checkout/produto?template=classic"
+}
+```
+
+---
+
+## 📋 Changelog das Últimas Mudanças
+
+### Versão 3.2 - Agosto 2025
+
+#### ✅ Adições:
+- **Componente PixelConfiguration.jsx** - Interface React para pixels
+- **Sistema de templates unificado** - Elimina duplicação `/checkout-pro`
+- **URLs flexíveis** - Override de templates via query parameters
+- **Documentação completa** - Todas as mudanças documentadas
+
+#### 🔧 Correções:
+- **Conflito de templates** - Removida rota `/checkout-pro/{slug}`
+- **Erro de importação** - Componente com export default correto
+- **URLs inconsistentes** - Sistema unificado e previsível
+
+#### 🚀 Melhorias:
+- **Performance** - Menos rotas duplicadas
+- **Manutenibilidade** - Código mais simples e limpo
+- **Flexibilidade** - Templates configuráveis por URL
+- **Experiência do Desenvolvedor** - Documentação clara e exemplos
+
+---
+
+**🎉 Sistema Completamente Documentado e Atualizado!**
+*Última atualização: Agosto 2025 - Versão 3.2*
